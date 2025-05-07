@@ -51,12 +51,19 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 250px; /* Adjust size as needed */
+  width: 250px;
   height: auto;
-  z-index: 0; /* Send it behind content if needed */
+  z-index: 0;
 }
 .dashboard-svg {
+  pointer-events: none;
+  opacity: 0.9;
   width: 350px;
+}
+
+.interface-main > *:not(img) {
+  z-index: 1;
+  position: relative;
 }
 
 /* Right section */
@@ -66,6 +73,7 @@
   flex-direction: column;
   padding: 20px;
   position: relative;
+  padding-bottom: 200px;
 }
 
 /* Header card */
@@ -99,6 +107,37 @@
   background-color: #ff5733;
   border-radius: 50%;
   box-shadow: 0 0 5px #ff5733aa;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 1rem;
+  z-index: 10;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 3px 0;
+  border-radius: 2px;
+}
+
+@media (max-width: 830px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .interface-header {
+    gap: 1rem;
+  }
+
+  .interface-title {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 768px) {
