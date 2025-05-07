@@ -1,0 +1,298 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.landing-page {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5vw;
+  gap: 3vw;
+  flex-wrap: wrap-reverse;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.title {
+  font-family: "Jacques Francois Shadow", serif;
+  font-weight: 400;
+  font-size: 6vw;
+  color: black;
+  margin: 0;
+  animation: slideUp 0.8s ease-out 0.4s both;
+}
+
+.tagline {
+  font-family: "Kite One", sans-serif;
+  font-size: 2.5vw;
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+  color: black;
+  text-wrap: none;
+  animation: slideUp 0.8s ease-out 0.4s both;
+}
+
+.get-started {
+  background-color: #ff5733;
+  border: none;
+  padding: 1vw 2vw;
+  border-radius: 0.5vw;
+  font-family: "Kite One", sans-serif;
+  font-size: 2vw;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  animation: slideUp 0.8s ease-out 0.6s both;
+}
+
+.get-started:hover {
+  transform: scale(1.05);
+}
+
+.landing-svg {
+  flex: 1;
+  height: auto;
+  z-index: 3;
+  width: 800px;
+  flex-shrink: 0;
+  animation: slideUp 0.8s ease-out 0.4s both;
+}
+
+.ellipse-one {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: none;
+  max-width: 60vw;
+  z-index: 1;
+}
+
+.auth-buttons {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  gap: 20px;
+  z-index: 999;
+}
+
+.login-btn,
+.signup-btn {
+  font-family: "Kite One", sans-serif;
+  font-size: 2vw;
+  background: none;
+  border: none;
+  color: #f2d2bd;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  animation: slideUp 0.8s ease-out 0.2s both;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 1040px) {
+  .landing-svg {
+    max-width: 56vw;
+  }
+}
+
+@media (max-width: 1145px) {
+  .landing-svg {
+    max-width: 56vw;
+  }
+  .title {
+    font-size: 8vw;
+  }
+}
+
+@media (max-width: 905px) {
+  .landing-svg {
+    max-width: 51vw;
+    margin-bottom: 2cm;
+  }
+  .content-wrapper {
+    margin-bottom: 3.5cm;
+  }
+}
+@media (max-width: 850px) {
+  .landing-svg {
+    max-width: 51vw;
+    margin-bottom: 2.5cm;
+  }
+  .title {
+    font-size: 9vw;
+  }
+}
+@media (max-width: 780px) {
+  .landing-svg {
+    max-width: 48vw;
+    margin-bottom: 2.5cm;
+  }
+}
+@media (max-width: 768px) {
+  .title {
+    font-size: 7vw;
+  }
+
+  .tagline {
+    font-size: 2.5vw;
+  }
+
+  .get-started {
+    font-size: 2.5vw;
+    padding: 1vw 1vw;
+  }
+
+  .login-btn,
+  .signup-btn {
+    font-size: 3vw;
+  }
+
+  .ellipse-one {
+    max-width: 65vw;
+  }
+}
+@media (max-width: 718px) {
+  .landing-svg {
+    max-width: 46vw;
+    margin-bottom: 2.5cm;
+  }
+}
+
+@media (max-width: 685px) {
+  .landing-svg {
+    margin-left: 3.5cm;
+    margin-top: 5cm;
+    max-width: 70vw;
+    padding-bottom: 2cm;
+  }
+
+  .title {
+    font-size: 12vw;
+    margin-top: -6cm;
+  }
+
+  .tagline {
+    font-size: 3.5vw;
+    margin-top: 10px;
+  }
+
+  .get-started {
+    font-size: 3vw;
+    padding: 2vw 4vw;
+  }
+
+  .login-btn,
+  .signup-btn {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .landing-svg {
+    margin-left: 3.5cm;
+    margin-top: 4cm;
+    max-width: 70vw;
+    padding-bottom: 3cm;
+  }
+
+  .title {
+    font-size: 12vw;
+    margin-top: -6cm;
+  }
+
+  .tagline {
+    font-size: 3.5vw;
+    margin-top: 10px;
+  }
+
+  .get-started {
+    font-size: 3vw;
+    padding: 2vw 4vw;
+  }
+
+  .login-btn,
+  .signup-btn {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 550px) {
+  .landing-svg {
+    margin-left: 2.5cm;
+    margin-top: 3cm;
+    max-width: 70vw;
+    padding-bottom: 3cm;
+  }
+}
+@media (max-width: 500px) {
+  .landing-svg {
+    margin-left: 1cm;
+    margin-top: 3cm;
+    max-width: 80vw;
+    padding-bottom: 3cm;
+  }
+}
+
+@media (max-width: 450px) {
+  .landing-svg {
+    margin-left: -0.4cm;
+    margin-top: 2cm;
+    max-width: 90vw;
+    padding-bottom: 3cm;
+  }
+  .title {
+    font-size: 15vw;
+    margin-top: -6cm;
+  }
+
+  .tagline {
+    font-size: 5vw;
+    margin-top: 10px;
+  }
+  .get-started {
+    font-size: 5vw;
+    padding: 2vw 4vw;
+  }
+
+  .login-btn,
+  .signup-btn {
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 380px) {
+  .landing-svg {
+    margin-left: -0.4cm;
+    margin-top: -1cm;
+    max-width: 90vw;
+    padding-bottom: 3cm;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

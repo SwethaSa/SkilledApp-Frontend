@@ -1,0 +1,20 @@
+:root {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #f2d2bd;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+main {
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+}

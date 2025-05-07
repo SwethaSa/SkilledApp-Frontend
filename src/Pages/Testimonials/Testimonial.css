@@ -1,0 +1,118 @@
+.testimonial-wrapper {
+  background-color: rgba(220, 184, 160, 0.4);
+  padding: 2rem;
+  text-align: center;
+  font-family: "Kite One", sans-serif;
+}
+
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+.testimonial-title {
+  font-family: "Jacques Francois Shadow", serif;
+  font-weight: 400;
+  color: black;
+  font-size: 8vh;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.testimonial-description {
+  font-family: "Kite One", sans-serif;
+  font-size: 3vh;
+  color: black;
+  text-align: center;
+  margin-top: -1.2cm;
+  line-height: 1.2;
+}
+
+.testimonial-card {
+  background: #ff58334d;
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid #ff5733;
+  min-height: 140px;
+  max-width: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: inset 4px 5px 8px rgba(0, 0, 0, 0.25);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.15),
+    0 12px 24px rgba(0, 0, 0, 0.2);
+  cursor: default;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.testimonial-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #d44836;
+  margin-top: auto;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards ease;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+.delay-2 {
+  animation-delay: 0.4s;
+}
+.delay-3 {
+  animation-delay: 0.6s;
+}
+.delay-4 {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 380px) {
+  .testimonial-title {
+    font-size: 5.5vh;
+  }
+
+  .testimonial-description {
+    font-size: 2.5vh;
+    margin-top: -0.9cm;
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-heading {
+    font-size: 1rem;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+
+  .testimonial-title {
+    font-size: 6vh;
+  }
+
+  .testimonial-description {
+    font-size: 2.5vh;
+    margin-top: -1cm;
+  }
+}

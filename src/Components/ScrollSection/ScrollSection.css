@@ -1,0 +1,82 @@
+.section-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2cm 0 2cm;
+  gap: 5vw;
+  box-sizing: border-box;
+  min-height: 80vh;
+  margin-top: 0;
+}
+
+.section-svg {
+  width: 40vw;
+}
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.new-background {
+  background-color: rgba(220, 184, 160, 0.4);
+}
+.section-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.section-title {
+  font-family: "Jacques Francois Shadow", serif;
+  font-weight: 400;
+  font-size: clamp(24px, 5vw, 40px);
+  color: black;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.section-description {
+  font-family: "Kite One", sans-serif;
+  font-size: 3vh;
+  color: black;
+  max-width: 50vw;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .section-svg {
+    width: 50vw;
+  }
+  .section-description {
+    max-width: 60vw;
+  }
+
+  .section-container {
+    padding: 4vh 4vw;
+    gap: 3vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 6vh 4vw;
+    min-height: auto;
+    gap: 0;
+  }
+
+  .section-svg {
+    width: 80vw;
+  }
+
+  .section-content {
+    text-align: center;
+  }
+
+  .section-description {
+    text-align: justify;
+    margin-bottom: 2vh;
+    font-size: 2.5vh;
+    max-width: 85vw;
+  }
+}

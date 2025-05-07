@@ -1,0 +1,59 @@
+.course-card {
+  background-color: #ff5733;
+  border-radius: 10px;
+  width: 220px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.course-img-container {
+  background-color: #7e1c07;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.course-img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+}
+
+.course-title {
+  font-family: "Jacques Francois Shadow", serif;
+  font-size: 1.2rem;
+  color: black;
+  margin: 0.5rem 0;
+}
+
+.course-description {
+  font-family: "Kite One", sans-serif;
+  font-size: 0.9rem;
+  color: white;
+  line-height: 1.4;
+  margin: 0.5rem 0;
+  padding: 0 0.5rem;
+}
+
+.course-button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  background-color: #f2d2bd;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-family: "Kite One", sans-serif;
+  transition: background-color 0.2s ease;
+}
+
+.course-button:hover {
+  background-color: #ffd9c3;
+}

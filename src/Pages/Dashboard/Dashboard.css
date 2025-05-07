@@ -1,0 +1,31 @@
+.dashboard-content {
+  padding: 1rem 2rem;
+}
+
+.card-section {
+  background-color: rgba(255, 139, 116, 0.52);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.section-title {
+  font-family: "Jacques Francois Shadow", serif;
+  font-size: 1.8rem;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.welcome-text {
+  font-family: "Kite One", sans-serif;
+  font-size: 1.1rem;
+  color: black;
+}

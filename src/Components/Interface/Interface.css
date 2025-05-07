@@ -1,0 +1,126 @@
+.interface-container {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.interface-card {
+  background-color: #ff5733;
+  max-width: 50vw;
+  padding: 30px;
+}
+.interface-card-title {
+  font-family: "Jacques Francois Shadow", serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  color: black;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.subtitle-btn {
+  font-family: "Kite One", sans-serif;
+  font-size: 1.2rem;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  color: black;
+  text-wrap: none;
+  font-weight: 400;
+  text-align: center;
+  transition: 0.2s ease-in-out;
+}
+
+.subtitle-btn.active {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.nav-divider {
+  border: none;
+  border-top: 0.3px solid #f2d2bda1;
+  width: 3.5cm;
+  margin: 0 auto;
+}
+
+.subtitle-btn:hover {
+  color: #f2d2bd;
+  cursor: pointer;
+}
+
+.ellipse,
+.dashboard-svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 250px; /* Adjust size as needed */
+  height: auto;
+  z-index: 0; /* Send it behind content if needed */
+}
+.dashboard-svg {
+  width: 350px;
+}
+
+/* Right section */
+.interface-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+}
+
+/* Header card */
+.interface-header {
+  height: 3cm;
+  background-color: rgba(255, 139, 116, 0.52);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 12px;
+  padding: 0 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  z-index: 1;
+}
+
+/* Title inside the card */
+.interface-title {
+  font-family: "Jacques Francois Shadow", serif;
+  font-size: 2rem;
+  color: black;
+  margin: 0;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Profile icon on the right */
+.profile-icon {
+  width: 45px;
+  height: 45px;
+  background-color: #ff5733;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #ff5733aa;
+}
+
+@media (max-width: 768px) {
+  .ellipse {
+    width: 200px;
+  }
+  .dashboard-svg {
+    width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .interface-card-title {
+    font-size: 6vw;
+    text-align: center;
+  }
+  .subtitle-btn {
+    font-size: 3.5vw;
+  }
+
+  .interface-card {
+    background-color: #ff5733;
+    max-width: 20vw;
+  }
+}

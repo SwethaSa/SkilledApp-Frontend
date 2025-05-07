@@ -1,0 +1,87 @@
+.card-container {
+  display: flex;
+  gap: 1.5cm;
+  align-items: center;
+  justify-content: center;
+  padding: 1cm;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #ff5733;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.card-img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.card-img-container {
+  background-color: #7e1c07;
+  border-radius: 10px;
+}
+
+.top-title,
+.card-title {
+  font-family: "Jacques Francois Shadow", serif;
+  font-weight: 400;
+  color: black;
+  font-size: 8vh;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.card-title {
+  font-size: 4vh;
+}
+
+.top-description {
+  font-family: "Kite One", sans-serif;
+  font-size: 4vh;
+  color: black;
+  text-align: center;
+  margin-top: -1cm;
+  line-height: 1;
+}
+
+.card-description {
+  font-family: "Kite One", sans-serif;
+  font-size: 2vh;
+  color: white;
+  text-align: center;
+  line-height: 1.6;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+  .top-description {
+    font-size: 3vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .card-container {
+    padding: 0.5cm;
+  }
+}
