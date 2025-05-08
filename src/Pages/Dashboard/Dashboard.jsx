@@ -74,42 +74,45 @@ function Dashboard() {
               </div>
             </>
           ) : (
-            <div className="card-section">
-              <div className="continue-learning">
-                <h2 className="section-title">Continue Learning</h2>
-                <div className="learning-card-list">
-                  {courses.map((course, index) => (
-                    <LearningCard
-                      key={index}
-                      title={course.title}
-                      completion={course.completion}
-                      onClick={() => alert(`Resuming ${course.title}`)}
-                    />
-                  ))}
+            <>
+              <div className="card-section">
+                <div className="continue-learning">
+                  <h2 className="section-title">Continue Learning</h2>
+                  <div className="learning-card-list">
+                    {courses.map((course, index) => (
+                      <LearningCard
+                        key={index}
+                        title={course.title}
+                        completion={course.completion}
+                        onClick={() => alert(`Resuming ${course.title}`)}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+
+              <div className="card-section">
+                <h2 className="section-title">You might Like</h2>
+                <div className="cards-grid">
+                  <CourseCard
+                    CourseImg="./src/assets/brain.svg"
+                    CourseTitle="Focus Mastery"
+                    CourseDesc="Improve your attention and mental clarity."
+                  />
+                  <CourseCard
+                    CourseImg="./src/assets/yoga.svg"
+                    CourseTitle="Morning Yoga"
+                    CourseDesc="Start your day with mindful movement."
+                  />
+                  <CourseCard
+                    CourseImg="./src/assets/handcoding.svg"
+                    CourseTitle="JS Crash Course"
+                    CourseDesc="Learn JavaScript with real-world tasks."
+                  />
+                </div>
+              </div>
+            </>
           )}
-          <div className="card-section">
-            <h2 className="section-title">You might Like</h2>
-            <div className="cards-grid">
-              <CourseCard
-                CourseImg="./src/assets/brain.svg"
-                CourseTitle="Focus Mastery"
-                CourseDesc="Improve your attention and mental clarity."
-              />
-              <CourseCard
-                CourseImg="./src/assets/yoga.svg"
-                CourseTitle="Morning Yoga"
-                CourseDesc="Start your day with mindful movement."
-              />
-              <CourseCard
-                CourseImg="./src/assets/handcoding.svg"
-                CourseTitle="JS Crash Course"
-                CourseDesc="Learn JavaScript with real-world tasks."
-              />
-            </div>
-          </div>
         </div>
       </Interface>
     </>

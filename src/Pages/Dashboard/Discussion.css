@@ -1,0 +1,21 @@
+/* Add this to your Interface.css or create a separate Discussion.css file */
+.discussion-card {
+  background-color: #ff5733; /* Orange background */
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.stream-chat .str-chat {
+  background-color: transparent;
+}
+
+.stream-chat .str-chat__header {
+  background-color: transparent;
+}
+
+.stream-chat .str-chat__messages {
+  max-height: 60vh;
+  overflow-y: auto;
+}

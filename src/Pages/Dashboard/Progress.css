@@ -1,0 +1,28 @@
+.progress-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+@media (max-width: 500px) {
+  .dashboard-content {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 410px) {
+  .dashboard-content {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 370px) {
+  .dashboard-content {
+    max-width: 200px;
+  }
+}

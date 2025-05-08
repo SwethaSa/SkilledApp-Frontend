@@ -1,6 +1,8 @@
 import React from "react";
 import Interface from "../../Components/Interface/Interface";
 import PolarChart from "../../Components/Charts/PolarChart";
+import AreaChart from "../../Components/Charts/AreaChart";
+import "./Progress.css";
 
 function Progress() {
   const isNewUser = false;
@@ -15,18 +17,16 @@ function Progress() {
         ButtonFour="Discussions"
         ButtonFive="All Courses"
         InterfaceImg="./src/assets/charts.svg"
-      />
-      <div
-        className="dashboard-content"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          minHeight: "100vh",
-        }}
       >
-        {isNewUser ? <PolarChart /> : <PolarChart />}
-      </div>
+        <h2 className="user-text">
+          Hmm!! Looks Like you haven’t started anything yet.
+        </h2>
+        <div className="progress-content">
+          <PolarChart isNewUser={isNewUser} />
+
+          <AreaChart isNewUser={isNewUser} />
+        </div>
+      </Interface>
     </>
   );
 }
