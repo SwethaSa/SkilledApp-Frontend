@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import loginSvg from "../../assets/login.svg";
+import GoogleAuth from "../../Components/Auth/GoogleAuth";
 
 function Login() {
   const [name, setName] = useState("");
@@ -12,7 +13,6 @@ function Login() {
     e.preventDefault();
 
     const API = import.meta.env.VITE_API;
-    console.log(API);
 
     const response = await fetch(`${API}/login`, {
       method: "POST",
@@ -26,7 +26,7 @@ function Login() {
       localStorage.setItem("token", data.token);
       console.log(data.token);
       alert("Login successful!");
-      navigate("/dashboard"); // Change this to your route
+      navigate("/dashboard");
     } else {
       alert(data.message);
     }
@@ -61,7 +61,7 @@ function Login() {
             <button type="submit">Login</button>
           </form>
           <p className="or">or</p>
-          <button className="google-login">Login with Google</button>
+          <GoogleAuth />
           <button className="facebook-login">Login with Facebook</button>
         </div>
       </div>
