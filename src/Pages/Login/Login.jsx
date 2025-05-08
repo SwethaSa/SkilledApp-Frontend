@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import loginSvg from "../../assets/login.svg";
@@ -9,12 +9,19 @@ function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/dashboard");
+    }
+  }, []);
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
     const API = import.meta.env.VITE_API;
 
-    const response = await fetch(`${API}/login`, {
+    const response = await fetch(`${API}/users/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, password }),
@@ -61,7 +68,8 @@ function Login() {
             <button type="submit">Login</button>
           </form>
           <p className="or">or</p>
-          <GoogleAuth />
+          <GoogleAuth authType="login" />
+
           <button className="facebook-login">Login with Facebook</button>
         </div>
       </div>
