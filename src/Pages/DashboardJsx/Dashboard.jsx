@@ -2,9 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Interface from "../../Components/Interface/Interface";
 import CourseCard from "../../Components/CourseCard/CourseCard";
-import "./Dashboard.css";
 import LearningCard from "../../Components/LearningCard/LearningCard";
 import { useNavigate } from "react-router-dom";
+import "../DashboardCss/Dashboard.css";
 
 function Dashboard() {
   const [isNewUser, setIsNewUser] = useState(false);

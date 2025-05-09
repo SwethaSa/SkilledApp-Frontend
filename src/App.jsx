@@ -7,14 +7,15 @@ import {
 } from "react-router-dom";
 
 import LandingPage from "./Pages/LandingPage/LandingPage";
-import Login from "./Pages/Login/Login";
-import Signup from "./Pages/Login/SignUp";
-import ForgotPassword from "./Pages/Login/ForgotPassword";
-import Dashboard from "./Pages/Dashboard/Dashboard";
-import Discussion from "./Pages/Dashboard/Discussion";
-import MyCourse from "./Pages/Dashboard/MyCourse";
-import Progress from "./Pages/Dashboard/Progress";
-import AllCourses from "./Pages/Dashboard/AllCourses";
+import Login from "./Pages/UserAuth/Login";
+import Signup from "./Pages/UserAuth/SignUp";
+import ForgotPassword from "./Pages/UserAuth/ForgotPassword";
+import Dashboard from "./Pages/DashboardJsx/Dashboard";
+import Discussion from "./Pages/DashboardJsx/Discussion";
+import MyCourse from "./Pages/DashboardJsx/MyCourse";
+import Progress from "./Pages/DashboardJsx/Progress";
+import AllCourses from "./Pages/DashboardJsx/AllCourses";
+import TopicCourse from "./Pages/DashboardJsx/TopicCourse";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/progress" element={<Progress />} />
         <Route path="/discussion" element={<Discussion />} />
         <Route path="/all-courses" element={<AllCourses />} />
+        <Route path="/all-courses/:topic" element={<TopicCourse />} />
       </Routes>
     </Router>
   );

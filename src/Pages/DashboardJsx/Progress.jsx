@@ -2,7 +2,7 @@ import React from "react";
 import Interface from "../../Components/Interface/Interface";
 import PolarChart from "../../Components/Charts/PolarChart";
 import AreaChart from "../../Components/Charts/AreaChart";
-import "./Progress.css";
+import "../DashboardCss/Progress.css";
 
 function Progress() {
   const isNewUser = false;

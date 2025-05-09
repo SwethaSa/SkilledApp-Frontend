@@ -2,7 +2,7 @@ import React from "react";
 import Interface from "../../Components/Interface/Interface";
 import LearningCard from "../../Components/LearningCard/LearningCard";
 import CourseCard from "../../Components/CourseCard/CourseCard";
-import "./Dashboard.css";
+import "../DashboardCss/Dashboard.css";
 function MyCourse() {
   const isNewUser = false;
 

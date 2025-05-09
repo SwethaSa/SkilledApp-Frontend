@@ -8,7 +8,7 @@ import {
   MessageInput,
 } from "stream-chat-react";
 import { StreamChat } from "stream-chat";
-import "./Discussion.css";
+import "../DashboardCss/Discussion.css";
 
 function Discussion() {
   return (
