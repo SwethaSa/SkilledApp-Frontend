@@ -1,16 +1,31 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import Interface from "../../Components/Interface/Interface";
 import CourseCard from "../../Components/CourseCard/CourseCard";
 import "./Dashboard.css";
 import LearningCard from "../../Components/LearningCard/LearningCard";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
-  const isNewUser = false;
+  const [isNewUser, setIsNewUser] = useState(false);
+  const [courses, setCourses] = useState([]);
+  const navigate = useNavigate();
 
-  const courses = [
-    { title: "JS Basics", completion: 20 },
-    { title: "Mental Wellbeing", completion: 48 },
-  ];
+  useEffect(() => {
+    const newUserFlag = localStorage.getItem("isNewUser");
+    setIsNewUser(newUserFlag === "true");
+
+    setCourses([
+      { title: "JS Basics", completion: 20 },
+      { title: "Mental Wellbeing", completion: 48 },
+    ]);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("isNewUser");
+    navigate("/login");
+  };
 
   return (
     <>
@@ -111,6 +126,7 @@ function Dashboard() {
                   />
                 </div>
               </div>
+              <button onClick={handleLogout}>Logout</button>
             </>
           )}
         </div>
