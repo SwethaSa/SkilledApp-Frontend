@@ -25,7 +25,7 @@ function TopicCourse() {
       ButtonThree="Progress"
       ButtonFour="Discussions"
       ButtonFive="All Courses"
-      InterfaceImg="./src/assets/allcourse.svg"
+      InterfaceImg="/assets/allcourse.svg"
     >
       <div className="topic-course-wrapper">
         {courses.map((course) => (

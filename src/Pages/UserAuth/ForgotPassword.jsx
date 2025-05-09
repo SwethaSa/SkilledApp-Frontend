@@ -1,6 +1,6 @@
 import React from "react";
 import "./Login.css";
-import loginSvg from "../../assets/forgot.svg";
+import loginSvg from "/assets/forgot.svg";
 
 function ForgotPassword() {
   return (

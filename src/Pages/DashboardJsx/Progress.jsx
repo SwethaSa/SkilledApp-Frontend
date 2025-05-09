@@ -16,7 +16,7 @@ function Progress() {
         ButtonThree="Progress"
         ButtonFour="Discussions"
         ButtonFive="All Courses"
-        InterfaceImg="./src/assets/charts.svg"
+        InterfaceImg="/assets/charts.svg"
       >
         <h2 className="user-text">
           Hmm!! Looks Like you haven’t started anything yet.

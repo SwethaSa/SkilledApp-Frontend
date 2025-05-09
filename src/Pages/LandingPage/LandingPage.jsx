@@ -2,9 +2,9 @@ import React from "react";
 import ScrollSection from "../../Components/ScrollSection/ScrollSection";
 import "./LandingPage.css";
 
-import OfferImg from "../../assets/offer.svg";
-import WhyImg from "../../assets/why.svg";
-import JoinImg from "../../assets/join.svg";
+import OfferImg from "/assets/offer.svg";
+import WhyImg from "/assets/why.svg";
+import JoinImg from "/assets/join.svg";
 import TopPicsPage from "../TopPicks/TopPicsPage";
 import Testimonials from "../Testimonials/Testimonials";
 import Contact from "../Contact/Contact";
@@ -26,16 +26,12 @@ function LandingPage() {
 
         <img
           className="landing-svg"
-          src="./src/assets/one.svg"
+          src="/assets/one.svg"
           alt="Landing Illustration"
         />
       </div>
 
-      <img
-        className="ellipse-one"
-        src="./src/assets/Ellipse1.svg"
-        alt="Ellipse"
-      />
+      <img className="ellipse-one" src="/assets/Ellipse1.svg" alt="Ellipse" />
 
       <ScrollSection
         title="What We Offer"

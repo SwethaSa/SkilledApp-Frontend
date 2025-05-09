@@ -14,7 +14,7 @@ function TopPicsPage() {
             <div className="card-img-container">
               <img
                 className="card-img"
-                src="./src/assets/handcoding.svg"
+                src="/assets/handcoding.svg"
                 alt="Card 1"
               />
             </div>
@@ -26,11 +26,7 @@ function TopPicsPage() {
           </div>
           <div className="card">
             <div className="card-img-container">
-              <img
-                className="card-img"
-                src="./src/assets/yoga.svg"
-                alt="Card 1"
-              />
+              <img className="card-img" src="/assets/yoga.svg" alt="Card 1" />
             </div>
             <h2 className="card-title">Yoga Flow</h2>
             <p className="card-description">
@@ -40,11 +36,7 @@ function TopPicsPage() {
           </div>
           <div className="card">
             <div className="card-img-container">
-              <img
-                className="card-img"
-                src="./src/assets/brain.svg"
-                alt="Card 1"
-              />
+              <img className="card-img" src="/assets/brain.svg" alt="Card 1" />
             </div>
             <h2 className="card-title">Mind Power</h2>
             <p className="card-description">

@@ -36,7 +36,7 @@ function Dashboard() {
         ButtonThree="Progress"
         ButtonFour="Discussions"
         ButtonFive="All Courses"
-        InterfaceImg="./src/assets/dashboard.svg"
+        InterfaceImg="/assets/dashboard.svg"
       >
         <div className="dashboard-content">
           {isNewUser ? (
@@ -45,22 +45,22 @@ function Dashboard() {
                 <h2 className="section-title">Explore All</h2>
                 <div className="cards-grid">
                   <CourseCard
-                    CourseImg="./src/assets/one.svg"
+                    CourseImg="/assets/one.svg"
                     CourseTitle="Course 1"
                     CourseDesc="This is a description of course 1."
                   />
                   <CourseCard
-                    CourseImg="./src/assets/yoga.svg"
+                    CourseImg="/assets/yoga.svg"
                     CourseTitle="Course 2"
                     CourseDesc="This is a description of course 2."
                   />
                   <CourseCard
-                    CourseImg="./src/assets/brain.svg"
+                    CourseImg="/assets/brain.svg"
                     CourseTitle="Course 3"
                     CourseDesc="This is a description of course 3."
                   />
                   <CourseCard
-                    CourseImg="./src/assets/creator.svg"
+                    CourseImg="/assets/creator.svg"
                     CourseTitle="Course 4"
                     CourseDesc="This is a description of course 4."
                   />
@@ -71,17 +71,17 @@ function Dashboard() {
                 <h2 className="section-title">Recommended For You</h2>
                 <div className="cards-grid">
                   <CourseCard
-                    CourseImg="./src/assets/brain.svg"
+                    CourseImg="/assets/brain.svg"
                     CourseTitle="Focus Mastery"
                     CourseDesc="Improve your attention and mental clarity."
                   />
                   <CourseCard
-                    CourseImg="./src/assets/yoga.svg"
+                    CourseImg="/assets/yoga.svg"
                     CourseTitle="Morning Yoga"
                     CourseDesc="Start your day with mindful movement."
                   />
                   <CourseCard
-                    CourseImg="./src/assets/handcoding.svg"
+                    CourseImg="/assets/handcoding.svg"
                     CourseTitle="JS Crash Course"
                     CourseDesc="Learn JavaScript with real-world tasks."
                   />
@@ -110,17 +110,17 @@ function Dashboard() {
                 <h2 className="section-title">You might Like</h2>
                 <div className="cards-grid">
                   <CourseCard
-                    CourseImg="./src/assets/brain.svg"
+                    CourseImg="/assets/brain.svg"
                     CourseTitle="Focus Mastery"
                     CourseDesc="Improve your attention and mental clarity."
                   />
                   <CourseCard
-                    CourseImg="./src/assets/yoga.svg"
+                    CourseImg="/assets/yoga.svg"
                     CourseTitle="Morning Yoga"
                     CourseDesc="Start your day with mindful movement."
                   />
                   <CourseCard
-                    CourseImg="./src/assets/handcoding.svg"
+                    CourseImg="/assets/handcoding.svg"
                     CourseTitle="JS Crash Course"
                     CourseDesc="Learn JavaScript with real-world tasks."
                   />

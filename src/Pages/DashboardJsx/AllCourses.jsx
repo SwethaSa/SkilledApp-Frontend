@@ -22,7 +22,7 @@ function AllCourses() {
         ButtonThree="Progress"
         ButtonFour="Discussions"
         ButtonFive="All Courses"
-        InterfaceImg="./src/assets/mycourse.svg"
+        InterfaceImg="/assets/mycourse.svg"
       >
         <button className="topic-btn" onClick={() => handleNavigation("IT")}>
           IT

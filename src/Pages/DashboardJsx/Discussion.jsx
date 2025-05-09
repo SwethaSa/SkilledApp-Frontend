@@ -20,7 +20,7 @@ function Discussion() {
         ButtonThree="Progress"
         ButtonFour="Discussions"
         ButtonFive="All Courses"
-        InterfaceImg="./src/assets/discussion.svg"
+        InterfaceImg="/assets/discussion.svg"
       ></Interface>
     </>
   );

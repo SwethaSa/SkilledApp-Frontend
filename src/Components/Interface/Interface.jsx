@@ -66,11 +66,7 @@ function Interface({ title, InterfaceImg, children }) {
           <div className="profile-icon" />
         </div>
         {children}
-        <img
-          src="./src/assets/Ellipse3.svg"
-          alt="Ellipse"
-          className="ellipse"
-        />
+        <img src="/assets/Ellipse3.svg" alt="Ellipse" className="ellipse" />
         <img src={InterfaceImg} alt="dashboard" className="dashboard-svg" />
       </div>
     </div>

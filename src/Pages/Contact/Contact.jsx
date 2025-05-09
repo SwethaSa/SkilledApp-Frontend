@@ -68,7 +68,7 @@ function Contact() {
           </div>
           <div className="img-container">
             <img
-              src="./src/assets/contact.svg"
+              src="/assets/contact.svg"
               alt="Contact Us"
               className="contact-image"
             />

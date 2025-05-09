@@ -20,7 +20,7 @@ function MyCourse() {
         ButtonThree="Progress"
         ButtonFour="Discussions"
         ButtonFive="All Courses"
-        InterfaceImg="./src/assets/mycourse.svg"
+        InterfaceImg="/assets/mycourse.svg"
       >
         <div className="dashboard-content">
           {isNewUser ? (
@@ -32,22 +32,22 @@ function MyCourse() {
                 <h2 className="section-title">Explore All Courses</h2>
                 <div className="cards-grid">
                   <CourseCard
-                    CourseImg="./src/assets/one.svg"
+                    CourseImg="/assets/one.svg"
                     CourseTitle="Course 1"
                     CourseDesc="This is a description of course 1."
                   />
                   <CourseCard
-                    CourseImg="./src/assets/yoga.svg"
+                    CourseImg="/assets/yoga.svg"
                     CourseTitle="Course 2"
                     CourseDesc="This is a description of course 2."
                   />
                   <CourseCard
-                    CourseImg="./src/assets/brain.svg"
+                    CourseImg="/assets/brain.svg"
                     CourseTitle="Course 3"
                     CourseDesc="This is a description of course 3."
                   />
                   <CourseCard
-                    CourseImg="./src/assets/creator.svg"
+                    CourseImg="/assets/creator.svg"
                     CourseTitle="Course 4"
                     CourseDesc="This is a description of course 4."
                   />

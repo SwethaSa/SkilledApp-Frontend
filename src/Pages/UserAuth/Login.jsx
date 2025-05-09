@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import loginSvg from "../../assets/login.svg";
+import loginSvg from "/assets/login.svg";
 import GoogleAuth from "../../Components/Auth/GoogleAuth";
 
 function Login() {
