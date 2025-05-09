@@ -1,0 +1,19 @@
+.topic-btn {
+  font-family: "Kite One", sans-serif;
+  font-size: 1.1rem;
+  color: black;
+  font-weight: 200;
+  background-color: #ff5733;
+  padding: 10px;
+  border: none;
+  margin: 18px 7cm;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.topic-btn:hover {
+  background-color: #ff5733;
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
