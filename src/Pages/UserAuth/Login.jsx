@@ -15,7 +15,6 @@ function Login() {
       navigate("/dashboard");
     }
   }, []);
-
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -30,8 +29,14 @@ function Login() {
     const data = await response.json();
 
     if (response.ok) {
+      // ✅ Correctly store the token and user details
       localStorage.setItem("token", data.token);
-      console.log(data.token);
+      localStorage.setItem("userId", data.userId);
+      localStorage.setItem(
+        "user",
+        JSON.stringify({ name: data.name, email: data.email })
+      );
+
       alert("Login successful!");
       navigate("/dashboard");
     } else {

@@ -1,11 +1,21 @@
+/* Global fix to avoid padding-related overflow */
+* {
+  box-sizing: border-box;
+}
+
 .course-card {
   background-color: #ff5733;
   border-radius: 10px;
   width: 250px;
-  height: 180px;
+  min-height: 200px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  overflow: hidden;
 }
 
 .course-card:hover {
@@ -31,10 +41,9 @@
   font-family: "Jacques Francois Shadow", serif;
   font-size: 1.2rem;
   color: black;
-  margin: 0.5rem 0;
   font-weight: 450;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  margin-top: 20px;
+  margin: 0.5rem 0;
 }
 
 .course-description {
@@ -43,13 +52,12 @@
   color: white;
   line-height: 1.4;
   margin: 0.5rem 0;
-  margin-top: 25px;
   padding: 0 0.5rem;
 }
 
 .course-button {
   margin-top: 0.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
   padding: 0.4rem 1rem;
   font-size: 0.85rem;
   background-color: #f2d2bd;
@@ -63,4 +71,15 @@
 .course-button:hover {
   background-color: #ffd9c3;
   cursor: pointer;
+}
+
+/* Wrapper for all course cards */
+.topic-course-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: rgba(255, 139, 116, 0.52);
+  border-radius: 10px;
 }

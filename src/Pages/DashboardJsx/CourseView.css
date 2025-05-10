@@ -1,0 +1,214 @@
+.course-view-wrapper {
+  padding: 2rem;
+  max-width: 100;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.course-subtitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: black; /* gray-800 */
+  margin-bottom: 0.5rem;
+}
+
+.course-description {
+  font-size: 1rem;
+  color: black; /* gray-600 */
+}
+
+.module-card {
+  background-color: rgba(255, 139, 116, 0.644);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.module-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #111827; /* gray-900 */
+}
+
+/* Markdown Styles */
+.markdown-paragraph {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #374151; /* gray-700 */
+}
+
+.markdown-heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-list {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-list-item {
+  margin-bottom: 0.5rem;
+  list-style-type: disc;
+}
+
+.markdown-code {
+  background-color: #f57a5f;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+@media (max-width: 768px) {
+  .course-view-wrapper {
+    padding: 1rem;
+  }
+
+  .module-card {
+    padding: 1rem;
+  }
+
+  .module-title {
+    font-size: 1.3rem;
+  }
+
+  .markdown-paragraph {
+    font-size: 0.95rem;
+  }
+
+  .nav-btn {
+    width: 48%;
+    font-size: 0.95rem;
+  }
+
+  .module-nav-buttons {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-btn {
+    width: 100%;
+  }
+
+  .module-nav-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.module-nav-buttons {
+  display: flex;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.nav-btn {
+  font-family: "Kite One", sans-serif;
+  padding: 0.6rem 1.2rem;
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+  font-weight: 400;
+}
+
+.nav-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background-color: #f57a5f;
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.course-view-wrapper,
+.course-subtitle,
+.course-description,
+.module-card,
+.markdown-paragraph,
+.markdown-heading,
+.markdown-list,
+.markdown-list-item {
+  font-family: "Kite One", sans-serif;
+  color: black; /* gray-800 */
+}
+
+.complete-btn {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 1rem 0;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.completed-msg {
+  color: green;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.progress-bar-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 80%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.progress-bar-filled {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.4s ease-in-out;
+}
+
+.progress-label {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.progress-bar-container {
+  margin-top: 20px;
+}
+
+.progress-label {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.progress-bar {
+  background: #ddd;
+  border-radius: 8px;
+  height: 12px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress-filled {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.4s ease-in-out;
+}

@@ -6,7 +6,7 @@ function LearningCard({ title, completion, onClick }) {
     <div className="learning-card">
       <h3 className="learning-title">{title}</h3>
       <p className="learning-completion">Completion: {completion}%</p>
-      <button className="course-button" onClick={onClick}>
+      <button className="learning-button" onClick={onClick}>
         Resume
       </button>
     </div>

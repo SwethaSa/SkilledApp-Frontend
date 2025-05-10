@@ -8,9 +8,11 @@ function GoogleAuth({ authType }) {
   function handleLogout() {
     googleLogout();
     localStorage.removeItem("token");
+    localStorage.removeItem("userId");
     alert("Logged out successfully!");
     navigate("/login");
   }
+
   return (
     <>
       <GoogleLogin
@@ -23,13 +25,15 @@ function GoogleAuth({ authType }) {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ idToken }), // Send the idToken to your backend
+            body: JSON.stringify({ idToken }),
           });
 
           const data = await response.json();
 
           if (response.ok) {
-            localStorage.setItem("token", data.token);
+            -localStorage.setItem("token", data.token);
+            +localStorage.setItem("token", data.token);
+            +localStorage.setItem("userId", data.userId); // ← store the userId
             alert(`${authType === "signup" ? "Signup" : "Login"} successful!`);
             navigate("/dashboard");
           } else {

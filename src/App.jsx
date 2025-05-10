@@ -16,6 +16,7 @@ import MyCourse from "./Pages/DashboardJsx/MyCourse";
 import Progress from "./Pages/DashboardJsx/Progress";
 import AllCourses from "./Pages/DashboardJsx/AllCourses";
 import TopicCourse from "./Pages/DashboardJsx/TopicCourse";
+import CourseView from "./Pages/DashboardJsx/CourseView";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/discussion" element={<Discussion />} />
         <Route path="/all-courses" element={<AllCourses />} />
         <Route path="/all-courses/:topic" element={<TopicCourse />} />
+        <Route path="/course/:id" element={<CourseView />} />
       </Routes>
     </Router>
   );
