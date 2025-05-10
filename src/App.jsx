@@ -23,25 +23,31 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* Public Routes */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+
+        {/* Protected Routes */}
         <Route
-          path="/dashboard"
+          path="*"
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <Routes>
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/my-course" element={<MyCourse />} />
+                <Route path="/progress" element={<Progress />} />
+                <Route path="/discussion" element={<Discussion />} />
+                <Route path="/all-courses" element={<AllCourses />} />
+                <Route path="/all-courses/:topic" element={<TopicCourse />} />
+                <Route path="/course/:id" element={<CourseView />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="*" element={<Navigate to="/dashboard" />} />
+              </Routes>
             </ProtectedRoute>
           }
         />
-        <Route path="/my-course" element={<MyCourse />} />
-        <Route path="/progress" element={<Progress />} />
-        <Route path="/discussion" element={<Discussion />} />
-        <Route path="/all-courses" element={<AllCourses />} />
-        <Route path="/all-courses/:topic" element={<TopicCourse />} />
-        <Route path="/course/:id" element={<CourseView />} />
-        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   );
@@ -49,14 +55,12 @@ function App() {
 
 function ProtectedRoute({ children }) {
   const isAuthenticated = localStorage.getItem("token");
-  console.log("Inside ProtectedRoute - token:", isAuthenticated);
 
   if (!isAuthenticated) {
-    console.log("Redirecting to login...");
-    return <Navigate replace to="/login" />;
+    return <Navigate to="/login" replace />;
   }
 
-  return <section>{children}</section>;
+  return <>{children}</>;
 }
 
 export default App;

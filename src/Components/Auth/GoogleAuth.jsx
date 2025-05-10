@@ -1,15 +1,30 @@
 import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
+import { Toaster, toast } from "react-hot-toast";
 
 function GoogleAuth({ authType }) {
   const navigate = useNavigate();
+  const toastOptions = {
+    style: {
+      border: "1px solid #ff5733",
+      padding: "14px 16px",
+      color: "#fff",
+      background: "#ff5733",
+      borderRadius: "10px",
+      fontWeight: "500",
+    },
+    iconTheme: {
+      primary: "#fff",
+      secondary: "#F0EBFF",
+    },
+  };
 
   function handleLogout() {
     googleLogout();
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
-    alert("Logged out successfully!");
+    toast.success("Logged out successfully!", toastOptions);
     navigate("/login");
   }
 
@@ -34,10 +49,12 @@ function GoogleAuth({ authType }) {
             -localStorage.setItem("token", data.token);
             +localStorage.setItem("token", data.token);
             +localStorage.setItem("userId", data.userId); // ← store the userId
-            alert(`${authType === "signup" ? "Signup" : "Login"} successful!`);
+            toast.success(
+              `${authType === "signup" ? "Signup" : "Login"} successful!`
+            );
             navigate("/dashboard");
           } else {
-            alert("Google login failed");
+            toast.error("Google login failed");
           }
         }}
       />

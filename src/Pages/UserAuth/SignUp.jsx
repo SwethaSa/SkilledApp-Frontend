@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import loginSvg from "/assets/signup.svg";
 import GoogleAuth from "../../Components/Auth/GoogleAuth";
+import { Toaster, toast } from "react-hot-toast";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -18,29 +19,54 @@ function Signup() {
     }
   }, []);
 
+  const toastOptions = {
+    style: {
+      border: "1px solid #ff5733",
+      padding: "14px 16px",
+      color: "#fff",
+      background: "#ff5733",
+      borderRadius: "10px",
+      fontWeight: "500",
+    },
+    iconTheme: {
+      primary: "#fff",
+      secondary: "#F0EBFF",
+    },
+  };
+
   const handleSignup = async (e) => {
     e.preventDefault();
 
     const API = import.meta.env.VITE_API;
 
-    const response = await fetch(`${API}/users/signup`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, phone, password }),
-    });
+    try {
+      const response = await fetch(`${API}/users/signup`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, phone, password }),
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (response.ok) {
-      alert("Signup successful!");
-      navigate("/login");
-    } else {
-      alert(data.message);
+      if (response.ok) {
+        toast.success(
+          "🎉 Signup successful! Redirecting to login...",
+          toastOptions
+        );
+        setTimeout(() => {
+          navigate("/login");
+        }, 2000);
+      } else {
+        toast.error(` ${data.message || "Signup failed."}`, toastOptions);
+      }
+    } catch (err) {
+      toast.error("❌ Network error. Please try again later.", toastOptions);
     }
   };
 
   return (
     <>
+      <Toaster position="top-center" reverseOrder={false} />
       <h1 className="login-title">Skill'ED</h1>
       <div className="login-container">
         <div className="login-left">
@@ -87,7 +113,6 @@ function Signup() {
           </form>
           <p className="or">or</p>
           <GoogleAuth authType="signup" />
-
           <button className="facebook-login">Sign up with Facebook</button>
         </div>
       </div>

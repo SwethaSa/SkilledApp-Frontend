@@ -16,7 +16,9 @@
   margin: 0;
   margin-bottom: 30px;
 }
-
+.interface-card-title:hover {
+  cursor: pointer;
+}
 .subtitle-btn {
   font-family: "Kite One", sans-serif;
   font-size: 1.2rem;
@@ -66,7 +68,6 @@
   position: relative;
 }
 
-/* Right section */
 .interface-main {
   flex-grow: 1;
   display: flex;
@@ -106,6 +107,12 @@
   background-color: #ff5733;
   border-radius: 50%;
   box-shadow: 0 0 5px #ff5733aa;
+}
+
+.profile-icon:hover {
+  cursor: pointer;
+  background-color: #ff704d;
+  box-shadow: 0 0 8px #ff5733cc;
 }
 
 .hamburger {
@@ -159,6 +166,13 @@
 
   .interface-card {
     background-color: #ff5733;
-    max-width: 20vw;
+    max-width: 33vw;
+  }
+
+  .nav-divider {
+    border: none;
+    border-top: 0.3px solid #ee9d68a1;
+    width: 50px;
+    margin: 0 auto;
   }
 }

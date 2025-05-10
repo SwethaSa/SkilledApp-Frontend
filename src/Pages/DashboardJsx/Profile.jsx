@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../DashboardCss/Profile.css";
+import Interface from "../../Components/Interface/Interface";
 
 const API = import.meta.env.VITE_API;
 
@@ -114,44 +115,61 @@ const Profile = () => {
   if (error) return <p className="error">{error}</p>;
 
   return (
-    <div className="profile-container">
-      <h1 className="profile-title">Your Profile</h1>
-      <form onSubmit={handleUpdate} className="profile-form">
-        {["name", "email", "phone", "password"].map((field) => (
-          <div key={field} className="form-group">
-            <label htmlFor={field} className="form-label">
-              {field === "password"
-                ? "New Password"
-                : field.charAt(0).toUpperCase() + field.slice(1)}
-            </label>
-            <input
-              id={field}
-              type={
-                field === "email"
-                  ? "email"
-                  : field === "password"
-                  ? "password"
-                  : "text"
-              }
-              name={field}
-              value={userData[field]}
-              onChange={handleChange}
-              className="form-input"
-              placeholder={
-                field === "password" ? "Leave blank to keep current" : ""
-              }
-              required={field !== "password"}
-            />
+    <>
+      <Interface
+        title="Profile"
+        ButtonOne="Dashboard"
+        ButtonTwo="My Course"
+        ButtonThree="Progress"
+        ButtonFour="Discussions"
+        ButtonFive="All Courses"
+        InterfaceImg="/assets/profile.svg"
+      >
+        <section className="profile-section">
+          <div className="profile-card">
+            <h2 className="profile-title">Your Profile</h2>
+            <p className="profile-description">
+              Update your account details here.
+            </p>
+            {error && <p className="profile-error">{error}</p>}
+            <form className="profile-form" onSubmit={handleUpdate}>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                value={userData.name}
+                onChange={handleChange}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={userData.email}
+                onChange={handleChange}
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone"
+                value={userData.phone}
+                onChange={handleChange}
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="New Password"
+                value={userData.password}
+                onChange={handleChange}
+              />
+              <button type="submit">Update Profile</button>
+              <button type="button" onClick={handleDelete}>
+                Delete Account
+              </button>
+            </form>
           </div>
-        ))}
-        <button type="submit" className="btn btn-update">
-          Update Profile
-        </button>
-      </form>
-      <button onClick={handleDelete} className="btn btn-delete">
-        Delete Account
-      </button>
-    </div>
+        </section>
+      </Interface>
+    </>
   );
 };
 

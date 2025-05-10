@@ -5,8 +5,6 @@ import AreaChart from "../../Components/Charts/AreaChart";
 import "../DashboardCss/Progress.css";
 
 function Progress() {
-  const isNewUser = false;
-
   return (
     <>
       <Interface
@@ -22,9 +20,9 @@ function Progress() {
           Hmm!! Looks Like you haven’t started anything yet.
         </h2>
         <div className="progress-content">
-          <PolarChart isNewUser={isNewUser} />
+          <PolarChart />
 
-          <AreaChart isNewUser={isNewUser} />
+          <AreaChart />
         </div>
       </Interface>
     </>

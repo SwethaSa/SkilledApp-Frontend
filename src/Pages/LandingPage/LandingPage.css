@@ -90,7 +90,8 @@ body {
 }
 
 .login-btn,
-.signup-btn {
+.signup-btn,
+.logout-btn {
   font-family: "Kite One", sans-serif;
   font-size: 2vw;
   background: none;
@@ -102,7 +103,8 @@ body {
 }
 
 .login-bt:hover,
-.signup-bt:hover {
+.signup-bt:hover,
+.logout-btn:hover {
   transform: scale(1.1);
 }
 

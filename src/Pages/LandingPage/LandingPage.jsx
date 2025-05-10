@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import ScrollSection from "../../Components/ScrollSection/ScrollSection";
 import "./LandingPage.css";
+import { useEffect } from "react";
 
 import OfferImg from "/assets/offer.svg";
 import WhyImg from "/assets/why.svg";
@@ -10,18 +12,55 @@ import Testimonials from "../Testimonials/Testimonials";
 import Contact from "../Contact/Contact";
 
 function LandingPage() {
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (token) {
+      navigate("/dashboard");
+    } else {
+      navigate("/login");
+    }
+  };
+  const handleSignClick = () => {
+    if (token) {
+      navigate("/dashboard");
+    } else {
+      navigate("/signup");
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
+
   return (
     <div id="home" className="landing-page">
       <div className="auth-buttons">
-        <button className="login-btn">Login</button>
-        <button className="signup-btn">Sign Up</button>
+        {token ? (
+          <button onClick={handleLogout} className="logout-btn">
+            Logout
+          </button>
+        ) : (
+          <>
+            <button onClick={handleClick} className="login-btn">
+              Login
+            </button>
+            <button onClick={handleSignClick} className="signup-btn">
+              Sign Up
+            </button>
+          </>
+        )}
       </div>
 
       <div className="content-wrapper">
         <div className="text-content">
           <h1 className="title">Skill'ED</h1>
           <h3 className="tagline">Where Skills Get Ed-ucated</h3>
-          <button className="get-started">Get Started</button>
+          <button onClick={handleClick} className="get-started">
+            Get Started
+          </button>
         </div>
 
         <img

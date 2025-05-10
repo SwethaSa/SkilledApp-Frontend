@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -8,6 +8,7 @@ import {
   LineElement,
   Tooltip,
   Filler,
+  Legend,
 } from "chart.js";
 
 ChartJS.register(
@@ -16,21 +17,70 @@ ChartJS.register(
   PointElement,
   LineElement,
   Tooltip,
-  Filler
+  Filler,
+  Legend
 );
 
-const AreaChart = ({ isNewUser }) => {
-  const progress = isNewUser ? [0, 0, 0, 0, 0] : [20, 40, 60, 75, 90];
+const API = import.meta.env.VITE_API;
+
+export default function ModulesOverTimeChart() {
+  const [labels, setLabels] = useState([]);
+  const [counts, setCounts] = useState([]);
+
+  useEffect(() => {
+    async function fetchCompletionTimestamps() {
+      const token = localStorage.getItem("token");
+      const userId = localStorage.getItem("userId");
+      const res = await fetch(`${API}/progress/user/${userId}`, {
+        headers: { "x-auth-token": token },
+      });
+      const progressList = await res.json();
+
+      // Extract all timestamps where a module was marked complete
+      const allTimestamps = [];
+      progressList.forEach((doc) => {
+        Object.entries(doc.progress || {}).forEach(([moduleIdx, done]) => {
+          if (done && doc.updatedAt) {
+            allTimestamps.push(new Date(doc.updatedAt));
+          }
+        });
+      });
+
+      // Group by week number since first completion
+      if (allTimestamps.length === 0) {
+        setLabels(["Week 1"]);
+        setCounts([0]);
+        return;
+      }
+      allTimestamps.sort((a, b) => a - b);
+      const start = allTimestamps[0];
+      const weekBuckets = {};
+
+      allTimestamps.forEach((ts) => {
+        const weekNum =
+          Math.floor((ts - start) / (7 * 24 * 60 * 60 * 1000)) + 1;
+        weekBuckets[weekNum] = (weekBuckets[weekNum] || 0) + 1;
+      });
+
+      const lbls = Object.keys(weekBuckets)
+        .sort((a, b) => a - b)
+        .map((w) => `Week ${w}`);
+      const data = lbls.map((w) => weekBuckets[parseInt(w.split(" ")[1], 10)]);
+
+      setLabels(lbls);
+      setCounts(data);
+    }
+
+    fetchCompletionTimestamps();
+  }, []);
 
   const data = {
-    labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Now"],
+    labels,
     datasets: [
       {
-        label: "Progress",
-        data: progress,
+        label: "Modules Completed",
+        data: counts,
         fill: true,
-        backgroundColor: "rgba(255, 87, 51, 0.2)",
-        borderColor: "#FF5733",
         tension: 0.4,
         pointRadius: 5,
         pointHoverRadius: 7,
@@ -42,52 +92,45 @@ const AreaChart = ({ isNewUser }) => {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
+      legend: { position: "top" },
       tooltip: { enabled: true },
-      legend: { display: false },
     },
     scales: {
       y: {
         beginAtZero: true,
-        max: 100,
+        title: { display: true, text: "Modules Completed" },
+      },
+      x: {
+        title: { display: true, text: "Time (weeks)" },
       },
     },
   };
 
   return (
-    <>
+    <div style={{ maxWidth: 400, margin: "auto" }}>
       <div
         style={{
-          width: "100%",
-          maxWidth: "400px",
-          margin: "auto",
+          height: 350,
+          background: "#fff5f2",
+          borderRadius: 16,
+          padding: "1rem",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
         }}
       >
-        <div
-          style={{
-            height: "350px",
-            background: "#fff5f2",
-            borderRadius: "16px",
-            padding: "1rem",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-          }}
-        >
-          <Line data={data} options={options} />
-        </div>
-        <p
-          style={{
-            textAlign: "center",
-            marginTop: "0.75rem",
-            fontWeight: "500",
-            fontSize: "1.05rem",
-            color: "#333",
-            fontFamily: "Kite One",
-          }}
-        >
-          Weekly Progress
-        </p>
+        <Line data={data} options={options} />
       </div>
-    </>
+      <p
+        style={{
+          textAlign: "center",
+          marginTop: "0.75rem",
+          fontWeight: 500,
+          fontSize: "1.05rem",
+          color: "#000",
+          fontFamily: "Kite One",
+        }}
+      >
+        Modules Completed Over Time
+      </p>
+    </div>
   );
-};
-
-export default AreaChart;
+}

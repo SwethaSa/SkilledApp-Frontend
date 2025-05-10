@@ -21,6 +21,11 @@ function Interface({ title, InterfaceImg, children }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("isNewUser");
+    navigate("/login");
+  };
   const navItems = [
     { label: "Dashboard", path: "/dashboard" },
     { label: "My Course", path: "/my-course" },
@@ -33,7 +38,9 @@ function Interface({ title, InterfaceImg, children }) {
     <div className="interface-container">
       {sidebarOpen && (
         <div className="interface-card">
-          <h2 className="interface-card-title">Skilled</h2>
+          <h2 onClick={() => navigate("/")} className="interface-card-title">
+            Skilled
+          </h2>
           {navItems.map((item) => (
             <React.Fragment key={item.path}>
               <hr className="nav-divider" />
@@ -64,10 +71,13 @@ function Interface({ title, InterfaceImg, children }) {
             </div>
           )}
           <h1 className="interface-title">{title}</h1>
-          <div className="profile-icon" onClick={() => navigate("/profile")} />
+          <div
+            className="profile-icon"
+            onClick={() => navigate("/profile")}
+          ></div>
         </div>
         {children}
-        <Profile />
+
         <img src="/assets/Ellipse3.svg" alt="Ellipse" className="ellipse" />
         <img src={InterfaceImg} alt="dashboard" className="dashboard-svg" />
       </div>
