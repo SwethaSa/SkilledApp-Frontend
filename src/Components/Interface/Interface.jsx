@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Interface.css";
+import Profile from "../../Pages/DashboardJsx/Profile";
 
 function Interface({ title, InterfaceImg, children }) {
   const navigate = useNavigate();
@@ -63,9 +64,10 @@ function Interface({ title, InterfaceImg, children }) {
             </div>
           )}
           <h1 className="interface-title">{title}</h1>
-          <div className="profile-icon" />
+          <div className="profile-icon" onClick={() => navigate("/profile")} />
         </div>
         {children}
+        <Profile />
         <img src="/assets/Ellipse3.svg" alt="Ellipse" className="ellipse" />
         <img src={InterfaceImg} alt="dashboard" className="dashboard-svg" />
       </div>
