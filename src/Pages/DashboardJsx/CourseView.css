@@ -212,3 +212,33 @@
   background-color: #4caf50;
   transition: width 0.4s ease-in-out;
 }
+
+.module-nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.module-nav-buttons button {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #ff5733;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.module-nav-buttons button:hover:not(:disabled) {
+  background-color: #f57a5f;
+  transform: translateY(-2px);
+}
+
+.module-nav-buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #666;
+}

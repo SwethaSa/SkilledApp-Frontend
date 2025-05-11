@@ -19,6 +19,11 @@ import TopicCourse from "./Pages/DashboardJsx/TopicCourse";
 import CourseView from "./Pages/DashboardJsx/CourseView";
 import Profile from "./Pages/DashboardJsx/Profile";
 import ResetPassword from "./Pages/UserAuth/ResetPassword";
+import MentorDashboard from "./Pages/MentorMain/MetorDashboard";
+import CreateCourse from "./Pages/MentorMain/CreateCourse";
+import UpdateCourse from "./Pages/MentorMain/UpdateCourse";
+import ManageCourses from "./Pages/MentorMain/ManageCourse";
+import MentorChat from "./Pages/Chat/MentorChat";
 
 function App() {
   return (
@@ -45,6 +50,11 @@ function App() {
                 <Route path="/course/:id" element={<CourseView />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="*" element={<Navigate to="/dashboard" />} />
+                <Route path="/mentor-dashboard" element={<MentorDashboard />} />
+                <Route path="/create-course" element={<CreateCourse />} />
+                <Route path="/update-course/:id" element={<UpdateCourse />} />
+                <Route path="/manage-course" element={<ManageCourses />} />
+                <Route path="/mentor-chats" element={<MentorChat />} />
               </Routes>
             </ProtectedRoute>
           }

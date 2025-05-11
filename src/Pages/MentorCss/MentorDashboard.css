@@ -1,0 +1,54 @@
+.mentor-bg-courses {
+  background-color: rgb(240, 98, 47);
+  padding: 2rem;
+}
+
+.mentor-bg-progress {
+  background-color: rgb(239, 149, 116);
+  padding: 2rem;
+}
+
+.mentor-bg-discussions {
+  background-color: rgb(243, 125, 82);
+  padding: 2rem;
+}
+
+/* Common styles */
+.dashboard-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mentor-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.mentors-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mentor-card {
+  background-color: bisque;
+  border-radius: 8px;
+  padding: 19.7px 2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  color: orangered;
+  font-family: "Kite One", sans serif;
+  font-weight: 500;
+}
+
+.mentor-card:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 228, 196, 0.856);
+}

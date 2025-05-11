@@ -1,0 +1,112 @@
+.mentor-dashboard-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Kite One", sans-serif;
+}
+
+/* Chats List Card */
+.mentor-chat-list {
+  width: 250px;
+  background: #ff5733;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.mentor-chat-list::-webkit-scrollbar {
+  display: none;
+}
+
+.mentor-chat-item {
+  padding: 25px;
+  border-bottom: 1px solid #eee;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mentor-chat-item:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.mentor-unread-dot {
+  width: 8px;
+  height: 8px;
+  background: #00ff00;
+  border-radius: 50%;
+}
+
+.mentor-chat-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.mentor-empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  background: #f2d2b0;
+}
+
+.mentor-message-list {
+  flex: 1;
+  padding: 16px;
+  background-color: rgba(255, 139, 116, 0.52);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.mentor-message-list::-webkit-scrollbar {
+  display: none;
+}
+
+.mentor-message {
+  margin-bottom: 12px;
+  max-width: 60%;
+  padding: 8px;
+  border-radius: 5px;
+  background: #fff3e6;
+  color: black;
+}
+.mentor-message.incoming {
+  align-self: flex-start;
+}
+.mentor-message.outgoing {
+  align-self: flex-end;
+}
+
+.mentor-input-area {
+  display: flex;
+  padding: 8px;
+  border-top: 1px solid #ccc;
+  background: #f2d2b0;
+}
+.mentor-input-area textarea {
+  flex: 1;
+  padding: 8px;
+  resize: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-family: "Kite One", sans-serif;
+}
+.mentor-input-area button {
+  margin-left: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #ff5733;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Kite One", sans-serif;
+}
+
+.mentor-message small {
+  font-size: 10px;
+  margin-top: 4px;
+  display: block;
+}

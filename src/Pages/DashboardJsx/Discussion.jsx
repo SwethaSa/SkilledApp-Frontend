@@ -9,6 +9,7 @@ import {
 } from "stream-chat-react";
 import { StreamChat } from "stream-chat";
 import "../DashboardCss/Discussion.css";
+import LearnerChat from "../Chat/LearnerChat";
 
 function Discussion() {
   return (
@@ -21,7 +22,9 @@ function Discussion() {
         ButtonFour="Discussions"
         ButtonFive="All Courses"
         InterfaceImg="/assets/discussion.svg"
-      ></Interface>
+      >
+        <LearnerChat />
+      </Interface>
     </>
   );
 }

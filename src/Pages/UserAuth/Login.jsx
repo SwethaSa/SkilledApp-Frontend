@@ -49,6 +49,8 @@ function Login() {
       if (response.ok) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("userId", data.userId);
+        localStorage.setItem("name", data.name);
+
         localStorage.setItem(
           "user",
           JSON.stringify({ name: data.name, email: data.email })

@@ -7,7 +7,7 @@ import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./CourseView.css";
 
 function CourseView() {
-  const { id } = useParams(); // courseId
+  const { id } = useParams();
   const [course, setCourse] = useState(null);
   const [progressObj, setProgressObj] = useState({});
   const [currentModuleIndex, setCurrentModuleIndex] = useState(0);
@@ -15,7 +15,7 @@ function CourseView() {
   const [error, setError] = useState("");
 
   const userId = localStorage.getItem("userId");
-  const token = localStorage.getItem("token"); // your JWT
+  const token = localStorage.getItem("token");
   const API = import.meta.env.VITE_API;
 
   useEffect(() => {
@@ -26,19 +26,16 @@ function CourseView() {
         return;
       }
       try {
-        // 1) Fetch course
         const courseRes = await fetch(`${API}/course/${id}`);
         if (!courseRes.ok) throw new Error("Course not found");
         const courseData = await courseRes.json();
 
-        // 2) Fetch progress
         const progressRes = await fetch(`${API}/progress/${userId}/${id}`, {
           headers: { "x-auth-token": token },
         });
         if (!progressRes.ok) throw new Error("Could not fetch progress");
         const { progress = {} } = await progressRes.json();
 
-        // 3) Build full progress array & find first incomplete
         const fullProgress = courseData.modules.map(
           (_, idx) => progress[idx] || false
         );
@@ -48,7 +45,6 @@ function CourseView() {
             ? firstIncomplete
             : courseData.modules.length - 1;
 
-        // 4) Update state
         setCourse(courseData);
         setProgressObj(progress);
         setCurrentModuleIndex(startIndex);
@@ -61,17 +57,14 @@ function CourseView() {
     fetchCourseAndProgress();
   }, [id, userId, token, API]);
 
-  // helpers
   const total = course?.modules.length || 0;
   const completedCount = Object.values(progressObj).filter(Boolean).length;
   const isCurrentDone = !!progressObj[currentModuleIndex];
 
-  // navigation handlers
   const handlePrev = () => setCurrentModuleIndex((i) => Math.max(0, i - 1));
   const handleNext = () =>
     setCurrentModuleIndex((i) => Math.min(total - 1, i + 1));
 
-  // mark complete
   const handleComplete = async () => {
     try {
       const res = await fetch(`${API}/progress/${userId}`, {
@@ -88,10 +81,8 @@ function CourseView() {
       });
       if (!res.ok) throw new Error("Failed to update progress");
 
-      // update local state
       setProgressObj((p) => ({ ...p, [currentModuleIndex]: true }));
 
-      // then navigate to next module automatically:
       setCurrentModuleIndex((i) => (i < course.modules.length - 1 ? i + 1 : i));
     } catch (err) {
       alert(err.message);
