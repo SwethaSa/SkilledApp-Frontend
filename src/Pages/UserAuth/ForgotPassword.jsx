@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import loginSvg from "/assets/forgot.svg";
 
 function ForgotPassword() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const API = import.meta.env.VITE_API;
+    try {
+      const res = await fetch(`${API}/users/forgot-password`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+      setMessage(data.message);
+    } catch (error) {
+      setMessage("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <>
       <h1 className="login-title">Skill'ED</h1>
@@ -24,10 +47,18 @@ function ForgotPassword() {
             Hmm!! Let’s try to retrieve your account
           </h2>
 
-          <form className="login-form">
-            <input type="email" placeholder="Email" required />
+          <form className="login-form" onSubmit={handleSubmit}>
+            <input
+              type="email"
+              placeholder="Email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <button type="submit">Submit</button>
           </form>
+
+          {message && <p className="message">{message}</p>}
 
           <p className="or">or</p>
           <div className="login-extras">
