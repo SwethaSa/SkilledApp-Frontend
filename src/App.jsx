@@ -18,6 +18,7 @@ import AllCourses from "./Pages/DashboardJsx/AllCourses";
 import TopicCourse from "./Pages/DashboardJsx/TopicCourse";
 import CourseView from "./Pages/DashboardJsx/CourseView";
 import Profile from "./Pages/DashboardJsx/Profile";
+import ResetPassword from "./Pages/UserAuth/ResetPassword";
 
 function App() {
   return (
@@ -28,8 +29,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
 
-        {/* Protected Routes */}
         <Route
           path="*"
           element={
