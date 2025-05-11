@@ -3,23 +3,23 @@ import { Toaster, toast } from "react-hot-toast";
 import "./Login.css";
 import loginSvg from "/assets/forgot.svg";
 
+const toastOptions = {
+  style: {
+    border: "1px solid #ff5733",
+    padding: "14px 16px",
+    color: "#fff",
+    background: "#ff5733",
+    borderRadius: "10px",
+    fontWeight: "500",
+  },
+  iconTheme: {
+    primary: "#fff",
+    secondary: "#F0EBFF",
+  },
+};
+
 function ForgotPassword() {
   const [email, setEmail] = useState("");
-
-  const toastOptions = {
-    style: {
-      border: "1px solid #ff5733",
-      padding: "14px 16px",
-      color: "#fff",
-      background: "#ff5733",
-      borderRadius: "10px",
-      fontWeight: "500",
-    },
-    iconTheme: {
-      primary: "#fff",
-      secondary: "#F0EBFF",
-    },
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,26 +33,16 @@ function ForgotPassword() {
         },
         body: JSON.stringify({ email }),
       });
-
       const data = await res.json();
 
-      setTimeout(() => {
-        if (res.ok) {
-          toast.success(
-            data.message || "Reset link sent to your email.",
-            toastOptions
-          );
-        } else {
-          toast.error(
-            data.message || "Failed to send reset link.",
-            toastOptions
-          );
-        }
-      }, 200);
-    } catch (error) {
-      setTimeout(() => {
-        toast.error("Something went wrong. Please try again.", toastOptions);
-      }, 200);
+      if (res.ok) {
+        toast.success(data.message, toastOptions);
+      } else {
+        toast.error(data.message || "Something went wrong.", toastOptions);
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("Server error. Please try again.", toastOptions);
     }
   };
 
