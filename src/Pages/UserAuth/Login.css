@@ -27,6 +27,9 @@
   margin: 0;
   padding: 0.5rem;
 }
+.login-title:hover {
+  cursor: pointer;
+}
 
 .login-svg {
   width: 100%;

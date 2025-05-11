@@ -41,7 +41,8 @@ function ResetPassword() {
 
       if (res.ok) {
         toast.success(data.message, toastOptions);
-        setTimeout(() => navigate("/login"), 2000);
+        setTimeout(() => 2000);
+        navigate("/login");
       } else {
         toast.error(
           data.message || "Reset link invalid or expired.",
@@ -56,7 +57,9 @@ function ResetPassword() {
 
   return (
     <>
-      <h1 className="login-title">Skill'ED</h1>
+      <h1 onClick={() => navigate("/")} className="login-title">
+        Skill'ED
+      </h1>
 
       <div className="login-container">
         <div className="login-left">

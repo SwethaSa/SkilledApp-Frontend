@@ -71,7 +71,9 @@ function Login() {
     <>
       <Toaster position="top-center" reverseOrder={false} />
 
-      <h1 className="login-title">Skill'ED</h1>
+      <h1 onClick={() => navigate("/")} className="login-title">
+        Skill'ED
+      </h1>
       <div className="login-container">
         <div className="login-left">
           <h1 className="login-title">Login</h1>
@@ -85,7 +87,7 @@ function Login() {
           <form className="login-form" onSubmit={handleLogin}>
             <input
               type="text"
-              placeholder="Username or Email"
+              placeholder="Username"
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -102,7 +104,6 @@ function Login() {
 
           <p className="or">or</p>
           <GoogleAuth authType="login" />
-          <button className="facebook-login">Login with Facebook</button>
         </div>
       </div>
 

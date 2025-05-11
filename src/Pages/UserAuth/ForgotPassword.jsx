@@ -50,7 +50,9 @@ function ForgotPassword() {
     <>
       <Toaster position="top-center" reverseOrder={false} />
 
-      <h1 className="login-title">Skill'ED</h1>
+      <h1 onClick={() => navigate("/")} className="login-title">
+        Skill'ED
+      </h1>
 
       <div className="login-container">
         <div className="login-left">

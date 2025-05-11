@@ -67,7 +67,9 @@ function Signup() {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-      <h1 className="login-title">Skill'ED</h1>
+      <h1 onClick={() => navigate("/")} className="login-title">
+        Skill'ED
+      </h1>
       <div className="login-container">
         <div className="login-left">
           <h1 className="login-title">Sign Up</h1>
@@ -93,8 +95,13 @@ function Signup() {
               placeholder="Phone"
               required
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value.replace(/\D/g, "");
+                setPhone(value);
+              }}
+              maxLength="10"
             />
+
             <input
               type="email"
               placeholder="Email"
@@ -113,7 +120,6 @@ function Signup() {
           </form>
           <p className="or">or</p>
           <GoogleAuth authType="signup" />
-          <button className="facebook-login">Sign up with Facebook</button>
         </div>
       </div>
       <div className="login-extras">
