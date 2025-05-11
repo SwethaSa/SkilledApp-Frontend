@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import { HashLink } from "react-router-hash-link";
+import { Toaster, toast } from "react-hot-toast";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -8,6 +9,20 @@ function Contact() {
     email: "",
     message: "",
   });
+  const toastOptions = {
+    style: {
+      border: "1px solid #ff5733",
+      padding: "14px 16px",
+      color: "#fff",
+      background: "#ff5733",
+      borderRadius: "10px",
+      fontWeight: "500",
+    },
+    iconTheme: {
+      primary: "#fff",
+      secondary: "#F0EBFF",
+    },
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,24 +30,29 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const API = import.meta.env.VITE_API;
+
     try {
-      const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/users/contact`,
-        {
+      await toast.promise(
+        fetch(`${API}/users/contact`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
-        }
+        }).then(async (response) => {
+          const data = await response.json();
+          if (!response.ok) {
+            throw new Error(data.message || "Failed to send message");
+          }
+        }),
+        {
+          loading: "Sending message...",
+          success: "Message sent successfully!",
+          error: (err) => `Error: ${err.message}`,
+        },
+        toastOptions
       );
-
-      const data = await response.json();
-      if (response.ok) {
-        alert("Message sent successfully!");
-      } else {
-        alert("Failed to send message: " + data.message);
-      }
 
       setFormData({
         name: "",
@@ -40,13 +60,13 @@ function Contact() {
         message: "",
       });
     } catch (error) {
-      alert("Error sending message.");
-      console.error(error);
+      console.error("Error sending message:", error);
     }
   };
 
   return (
     <>
+      <Toaster position="top-center" reverseOrder={false} />
       <section id="contact">
         <div className="contact-container">
           <div className="contact-wrapper">
