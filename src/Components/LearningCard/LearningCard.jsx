@@ -1,6 +1,5 @@
 import React from "react";
-import "./LearningCard.css"; // Create this CSS file for styling
-
+import "./LearningCard.css";
 function LearningCard({ title, completion, onClick }) {
   return (
     <div className="learning-card">

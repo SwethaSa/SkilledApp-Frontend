@@ -1,6 +1,5 @@
-/* Add this to your Interface.css or create a separate Discussion.css file */
 .discussion-card {
-  background-color: #ff5733; /* Orange background */
+  background-color: #ff5733;
   border-radius: 12px;
   padding: 20px;
   max-width: 100%;

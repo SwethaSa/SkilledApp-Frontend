@@ -134,10 +134,8 @@
   }
 }
 
-/*Footer Styles*/
-
 .footer {
-  margin-top: 1cm; /* gap below contact */
+  margin-top: 1cm;
   height: 15vh;
   background-color: #ff5733;
   color: white;

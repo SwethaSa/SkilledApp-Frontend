@@ -27,6 +27,8 @@ function Login() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+    const email = localStorage.getItem("email");
+
     if (token) {
       toast.success("You're already logged in!");
       navigate("/dashboard");
@@ -50,6 +52,7 @@ function Login() {
         localStorage.setItem("token", data.token);
         localStorage.setItem("userId", data.userId);
         localStorage.setItem("name", data.name);
+        localStorage.setItem("email", data.email);
 
         localStorage.setItem(
           "user",

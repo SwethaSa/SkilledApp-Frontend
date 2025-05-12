@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import "./Login.css"; // reuse styles
+import "./Login.css";
 import resetSvg from "/assets/forgot.svg";
 
 const toastOptions = {

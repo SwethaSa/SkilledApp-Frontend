@@ -76,11 +76,9 @@ function Dashboard() {
         if (!allRes.ok) throw new Error("Failed to fetch all courses");
         const allCourses = await allRes.json();
 
-        // Filter out courses already learning
         const learningIds = new Set(data.map((c) => c.courseId));
         const filtered = allCourses.filter((c) => !learningIds.has(c._id));
 
-        // Randomize and pick 3
         for (let i = filtered.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [filtered[i], filtered[j]] = [filtered[j], filtered[i]];

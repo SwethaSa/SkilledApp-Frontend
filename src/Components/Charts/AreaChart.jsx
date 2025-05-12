@@ -36,7 +36,6 @@ export default function ModulesOverTimeChart() {
       });
       const progressList = await res.json();
 
-      // Extract all timestamps where a module was marked complete
       const allTimestamps = [];
       progressList.forEach((doc) => {
         Object.entries(doc.progress || {}).forEach(([moduleIdx, done]) => {
@@ -46,7 +45,6 @@ export default function ModulesOverTimeChart() {
         });
       });
 
-      // Group by week number since first completion
       if (allTimestamps.length === 0) {
         setLabels(["Week 1"]);
         setCounts([0]);

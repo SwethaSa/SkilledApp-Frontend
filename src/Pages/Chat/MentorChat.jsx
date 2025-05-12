@@ -13,6 +13,8 @@ export default function MentorDashboard() {
   const name = localStorage.getItem("name");
 
   useEffect(() => {
+    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+
     async function fetchChats() {
       const mentorId = localStorage.getItem("userId");
       const token = localStorage.getItem("token");
@@ -27,7 +29,7 @@ export default function MentorDashboard() {
       }
     }
     fetchChats();
-  }, []);
+  }, [messages]);
 
   const openChat = async (chat) => {
     setActiveChat(chat);

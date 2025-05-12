@@ -46,9 +46,11 @@ function GoogleAuth({ authType }) {
           const data = await response.json();
 
           if (response.ok) {
-            -localStorage.setItem("token", data.token);
-            +localStorage.setItem("token", data.token);
-            +localStorage.setItem("userId", data.userId); // ← store the userId
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("userId", data.userId);
+            localStorage.setItem("email", data.email);
+            localStorage.setItem("name", data.name);
+
             toast.success(
               `${authType === "signup" ? "Signup" : "Login"} successful!`
             );

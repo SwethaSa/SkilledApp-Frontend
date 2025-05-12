@@ -14,11 +14,10 @@
 .section-title {
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
-  color: #222; /* darker title color */
+  color: #222;
   text-align: center;
 }
 
-/* Headings in ManageCourses groups */
 .create-course-container h3 {
   font-size: 1.5rem;
   color: #333;
@@ -61,7 +60,7 @@
 }
 
 .module-block {
-  background: bisque; /* white background for card contrast */
+  background: bisque;
   border-radius: 8px;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -72,7 +71,6 @@
 }
 
 .module-block h4 {
-  /* for ManageCourses title */
   margin: 0 0 0.5rem 0;
   color: #222;
 }
@@ -127,7 +125,6 @@
   cursor: not-allowed;
 }
 
-/* ManageCourses buttons */
 .module-block button.submit-button {
   background: #ff5733;
   color: #fff;
@@ -147,7 +144,6 @@
   background: #449d48;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .create-course-container {
     padding: 1rem;

@@ -51,14 +51,12 @@ function LearnerChat({ mentorId }) {
   }, [mentorId]);
 
   const sendMessage = async () => {
-    // Prevent sending empty or whitespace-only messages
     if (!text.trim()) {
       toast.error("Cannot send an empty message", toastOptions);
       return;
     }
 
     try {
-      // Ensure chat exists or create it
       const learnerId = localStorage.getItem("userId");
       const token = localStorage.getItem("token");
       const chatRes = await fetch(`${API}/chat`, {
@@ -71,7 +69,6 @@ function LearnerChat({ mentorId }) {
       });
       const { _id: chatId } = await chatRes.json();
 
-      // Post the new message
       const res = await fetch(`${API}/chat/${chatId}/messages`, {
         method: "POST",
         headers: {

@@ -7,7 +7,7 @@ function AllCourses() {
   const navigate = useNavigate();
 
   const handleNavigation = (topic) => {
-    console.log("Clicked:", topic); // <-- Add this
+    console.log("Clicked:", topic);
 
     const path = topic.toLowerCase().replace(/\s+/g, "-");
     navigate(`/all-courses/${path}`);

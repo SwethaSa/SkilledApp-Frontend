@@ -28,9 +28,7 @@ function PolarChart() {
         );
         if (!res.ok) throw new Error("Failed to fetch progress");
         const progressList = await res.json();
-        // progressList: [{ userId, courseId, progress: { '0': true, '1': false, ... } }, ...]
 
-        // fetch each course to read its topic
         const byTopic = {};
         await Promise.all(
           progressList.map(async (doc) => {
@@ -44,13 +42,11 @@ function PolarChart() {
             ).length;
             const total = course.modules.length;
             const pct = Math.floor((done / total) * 100);
-            // accumulate average per topic
             if (!byTopic[topic]) byTopic[topic] = [];
             byTopic[topic].push(pct);
           })
         );
 
-        // prepare labels and averages
         const lbls = [];
         const data = [];
         Object.entries(byTopic).forEach(([topic, arr]) => {
@@ -69,7 +65,6 @@ function PolarChart() {
     fetchTopicProgress();
   }, []);
 
-  // fallback if no data yet
   const chartLabels = labels.length
     ? labels
     : ["IT", "Personal Growth", "Finance", "Language", "Creative Skills"];

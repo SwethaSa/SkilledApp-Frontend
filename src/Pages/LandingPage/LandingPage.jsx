@@ -13,6 +13,10 @@ import Contact from "../Contact/Contact";
 
 function LandingPage() {
   const token = localStorage.getItem("token");
+  localStorage.getItem("email");
+  localStorage.getItem("userId");
+  localStorage.getItem("name");
+
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -32,6 +36,10 @@ function LandingPage() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    localStorage.removeItem("email");
+    localStorage.removeItem("name");
+
     window.location.reload();
   };
 
