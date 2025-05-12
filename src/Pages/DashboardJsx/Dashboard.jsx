@@ -166,7 +166,7 @@ function Dashboard() {
                       CourseImg={course.image || "/assets/default.svg"}
                       CourseTitle={course.courseTitle}
                       CourseDesc={course.description || ""}
-                      onClick={() => handleOpen(course._id)}
+                      onOpen={() => handleOpenCourse(course._id)}
                     />
                   ))}
                 </div>
@@ -180,7 +180,7 @@ function Dashboard() {
                       CourseImg={course.image || "/assets/default.svg"}
                       CourseTitle={course.courseTitle}
                       CourseDesc={course.description || ""}
-                      onClick={() => handleOpen(course._id)}
+                      onOpen={() => handleOpenCourse(course._id)}
                     />
                   ))}
                 </div>

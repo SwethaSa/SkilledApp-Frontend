@@ -15,5 +15,33 @@
   background-color: #ff5733;
   transform: scale(1.05);
   transition: transform 0.3s ease-in-out;
+
   cursor: pointer;
+}
+
+@media (max-width: 1028px) {
+  .topic-btn {
+    margin: 18px 4cm;
+  }
+}
+
+@media (max-width: 628px) {
+  .topic-btn {
+    width: 6cm;
+    margin: 18px 4cm;
+  }
+}
+
+@media (max-width: 563px) {
+  .topic-btn {
+    width: 8cm;
+    margin: 12px 1cm;
+  }
+}
+
+@media (max-width: 430px) {
+  .topic-btn {
+    width: 7cm;
+    margin: 8px 1cm;
+  }
 }

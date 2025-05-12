@@ -90,6 +90,9 @@ function MyCourse() {
     toast.success(`Opening course`, toastOptions);
     navigate(`/course/${id}`);
   };
+  const handleOpenCourse = (courseId) => {
+    navigate(`/course/${courseId}`);
+  };
 
   const inProgress = continueCourses.filter((c) => c.completion < 100);
   const completed = continueCourses.filter((c) => c.completion === 100);
@@ -158,7 +161,7 @@ function MyCourse() {
                       CourseImg={course.image || "/assets/default.svg"}
                       CourseTitle={course.courseTitle}
                       CourseDesc={course.description || ""}
-                      onClick={() => handleOpen(course._id)}
+                      onOpen={() => handleOpenCourse(course._id)}
                     />
                   ))}
                 </div>
