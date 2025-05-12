@@ -1,12 +1,33 @@
-# React + Vite
+# 🌟 Skill'ED - Microlearning Web App for Modern Learners
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Skill'ED** is a modern microlearning platform built to help learners acquire skills through focused, bite-sized content. Designed with simplicity and effectiveness in mind, the platform combines intuitive UI/UX, real-time learning progress, structured lesson plans, and direct learner-mentor interaction.
 
-Currently, two official plugins are available:
+👉 [🔗 Visit the Live Website](https://skilledservice.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Project Highlights
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 📚 **Topic-Based Learning**: Users can explore categorized topics such as **JavaScript**, **HTML**, **Finance**, and more.
+- ✅ **Progress Tracker**: Track your learning journey at a modular level with completion status and visual progress bars.
+- 🧑‍🏫 **Mentor Dashboard**: Exclusive interface for mentors to create, update, and manage courses, and respond to learner messages.
+- 💬 **Discussion & Messaging**: Built-in learner-to-mentor chat interface with a WhatsApp-style design.
+- 🔐 **Secure Auth Flow**: Signup/Login, Forgot/Reset Password features with protected routes.
+- 🧠 **Course Management API**: Fully featured backend API with CRUD operations for topics, courses, modules, and user progress.
+- 📄 **Markdown-Based Lessons**: Each module supports rich text formatting for enhanced reading experience.
+- ⚙️ **Tech Stack**: React, Node.js, Express, MongoDB, Vite, TailwindCSS.
+
+
+## 🔐 Auth & Routing
+
+- Protected routes implemented for authenticated users.
+- Mentor routes conditionally rendered based on stored email.
+- JWT tokens stored in `localStorage` for session handling.
+- Password reset via tokenized route: `/reset-password/:token`.
+
+- ## 📈 Future Plans
+
+- Quizzes, leaderboards, and certificates
+- Gamified achievements and streak tracking
+- Course rating and feedback system
+- PDF Diary export for learners
