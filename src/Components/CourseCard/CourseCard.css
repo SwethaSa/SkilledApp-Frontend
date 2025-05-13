@@ -72,7 +72,6 @@
   cursor: pointer;
 }
 
-/* Wrapper for all course cards */
 .topic-course-wrapper {
   display: flex;
   flex-wrap: wrap;
