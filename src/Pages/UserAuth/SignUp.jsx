@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
 import loginSvg from "/assets/signup.svg";
 import GoogleAuth from "../../Components/Auth/GoogleAuth";
@@ -123,8 +123,7 @@ function Signup() {
         </div>
       </div>
       <div className="login-extras">
-        <a href="/login">Already have an account? Login</a>
-      </div>
+<Link to="/login">Already have an account? Login</Link>      </div>
     </>
   );
 }
