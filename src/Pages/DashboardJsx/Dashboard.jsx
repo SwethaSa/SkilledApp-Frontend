@@ -121,6 +121,24 @@ function Dashboard() {
         InterfaceImg="/assets/dashboard.svg"
       >
         <div className="dashboard-content">
+{localStorage.getItem("email") === "swethasakthi1227@gmail.com" && (
+      <div style={{ textAlign: "right", marginBottom: "1rem" }}>
+        <button
+          onClick={() => navigate("/mentor-dashboard")}
+          style={{
+            backgroundColor: "#4A90E2",
+            color: "#fff",
+            padding: "10px 16px",
+            borderRadius: "8px",
+            fontWeight: "600",
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
+          Switch to Mentor
+        </button>
+      </div>
+    )}
           {continueCourses.length > 0 ? (
             <>
               <div className="card-section">
