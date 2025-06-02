@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import "./Login.css";
 import loginSvg from "/assets/forgot.svg";
+import { Link } from "react-router-dom";
 
 const toastOptions = {
   style: {
@@ -84,7 +85,7 @@ function ForgotPassword() {
 
           <p className="or">or</p>
           <div className="login-extras">
-            <a href="/login">Back to Login</a>
+            <Link to="/login">Back to Login</Link>
           </div>
         </div>
       </div>
