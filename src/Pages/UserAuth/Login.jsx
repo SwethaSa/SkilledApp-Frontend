@@ -90,7 +90,7 @@ function Login() {
         <div className="login-card">
           <h2 className="login-heading">Hey, welcome back!</h2>
           <div className="login-info-box">
-  <p><strong>For testing mentor portal:</strong></p>
+  <p><strong>For accessing mentor portal:</strong></p>
   <p>Email: <code>swethasakthi1227@gmail.com</code></p>
   <p>Password: <code>Admin@123</code></p>
 </div>
