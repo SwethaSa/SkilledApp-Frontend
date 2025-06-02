@@ -126,7 +126,7 @@ function Dashboard() {
         <button
           onClick={() => navigate("/mentor-dashboard")}
           style={{
-            backgroundColor: "#4A90E2",
+            backgroundColor: "#ff5733",
             color: "#fff",
             padding: "10px 16px",
             borderRadius: "8px",
