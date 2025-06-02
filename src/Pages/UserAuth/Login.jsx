@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
 import loginSvg from "/assets/login.svg";
 import GoogleAuth from "../../Components/Auth/GoogleAuth";
@@ -112,10 +112,10 @@ function Login() {
         </div>
       </div>
 
-      <div className="login-extras">
-        <a href="/forgot-password">Forgot Password?</a>
-        <a href="/signup">Don't have an account? Sign Up</a>
-      </div>
+     <div className="login-extras">
+  <Link to="/forgot-password">Forgot Password?</Link>
+  <Link to="/signup">Don't have an account? Sign Up</Link>
+</div>
     </>
   );
 }
