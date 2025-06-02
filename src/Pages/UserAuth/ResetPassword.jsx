@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import "./Login.css";
 import resetSvg from "/assets/forgot.svg";
@@ -90,7 +90,7 @@ function ResetPassword() {
 
           <p className="or">or</p>
           <div className="login-extras">
-            <a href="/login">Back to Login</a>
+            <Link to="/login">Back to Login</Link>
           </div>
         </div>
       </div>
